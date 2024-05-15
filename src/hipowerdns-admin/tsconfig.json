@@ -24,6 +24,7 @@
       "dom"
     ],
     "paths": {
+      "@app/*": ["src/*"],
       "@material/*" : ["src/app/shared/material/*"],
       "@models/*": ["src/app/shared/models/*"],
       "@pipes/*": ["src/app/shared/pipes/*"],

@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Host", "Host", "{97211B26-2A9A-4A9A-A299-3338560D5A46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{D28C2DA3-0A3A-4324-A521-4216BF5A42D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{97440332-EA2C-47E6-A68A-6DB4D3CB0BFC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hiDNService.API.Infrastructure", "src\hiDNService.API.Infrastructure\hiDNService.API.Infrastructure.csproj", "{49E16EC7-78A8-4D26-A35F-1F2205B01C3B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hiDNService.API.Infrastructure.Database", "src\hiDNService.API.Infrastructure.Database\hiDNService.API.Infrastructure.Database.csproj", "{33C32A26-C63D-40BB-92C4-92C07BA5162D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hiDNService.API.Infrastructure.PowerDns", "src\hiDNService.API.Infrastructure.PowerDns\hiDNService.API.Infrastructure.PowerDns.csproj", "{60CF7829-8CF5-41A2-A970-C5C1B26DD75A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hiDNService.API", "src\hiDNService.API\hiDNService.API.csproj", "{38577424-879D-4B52-B602-3747BC43C560}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hiDNService.API.Abstract", "src\hiDNService.API.Abstract\hiDNService.API.Abstract.csproj", "{F8158883-3C4F-4994-9BA2-6D1E372DFC9D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hiDNService.API.Model", "src\hiDNService.API.Model\hiDNService.API.Model.csproj", "{081ACBD0-1CE8-4C78-BDC1-E641A71F6287}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hiDNService.API.Interface", "src\hiDNService.API.Interface\hiDNService.API.Interface.csproj", "{0E407F99-0366-416C-A838-30F4A785794A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hiDNService.API.Core", "src\hiDNService.API.Core\hiDNService.API.Core.csproj", "{3EF5C2DD-3583-412A-A5BE-0F71F48E9670}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49E16EC7-78A8-4D26-A35F-1F2205B01C3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49E16EC7-78A8-4D26-A35F-1F2205B01C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49E16EC7-78A8-4D26-A35F-1F2205B01C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49E16EC7-78A8-4D26-A35F-1F2205B01C3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33C32A26-C63D-40BB-92C4-92C07BA5162D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33C32A26-C63D-40BB-92C4-92C07BA5162D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33C32A26-C63D-40BB-92C4-92C07BA5162D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33C32A26-C63D-40BB-92C4-92C07BA5162D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60CF7829-8CF5-41A2-A970-C5C1B26DD75A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60CF7829-8CF5-41A2-A970-C5C1B26DD75A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60CF7829-8CF5-41A2-A970-C5C1B26DD75A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60CF7829-8CF5-41A2-A970-C5C1B26DD75A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38577424-879D-4B52-B602-3747BC43C560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38577424-879D-4B52-B602-3747BC43C560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38577424-879D-4B52-B602-3747BC43C560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38577424-879D-4B52-B602-3747BC43C560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8158883-3C4F-4994-9BA2-6D1E372DFC9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8158883-3C4F-4994-9BA2-6D1E372DFC9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8158883-3C4F-4994-9BA2-6D1E372DFC9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8158883-3C4F-4994-9BA2-6D1E372DFC9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{081ACBD0-1CE8-4C78-BDC1-E641A71F6287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{081ACBD0-1CE8-4C78-BDC1-E641A71F6287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{081ACBD0-1CE8-4C78-BDC1-E641A71F6287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{081ACBD0-1CE8-4C78-BDC1-E641A71F6287}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E407F99-0366-416C-A838-30F4A785794A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E407F99-0366-416C-A838-30F4A785794A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E407F99-0366-416C-A838-30F4A785794A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E407F99-0366-416C-A838-30F4A785794A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EF5C2DD-3583-412A-A5BE-0F71F48E9670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EF5C2DD-3583-412A-A5BE-0F71F48E9670}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EF5C2DD-3583-412A-A5BE-0F71F48E9670}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EF5C2DD-3583-412A-A5BE-0F71F48E9670}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{49E16EC7-78A8-4D26-A35F-1F2205B01C3B} = {D28C2DA3-0A3A-4324-A521-4216BF5A42D5}
+		{33C32A26-C63D-40BB-92C4-92C07BA5162D} = {D28C2DA3-0A3A-4324-A521-4216BF5A42D5}
+		{60CF7829-8CF5-41A2-A970-C5C1B26DD75A} = {D28C2DA3-0A3A-4324-A521-4216BF5A42D5}
+		{38577424-879D-4B52-B602-3747BC43C560} = {97211B26-2A9A-4A9A-A299-3338560D5A46}
+		{F8158883-3C4F-4994-9BA2-6D1E372DFC9D} = {97440332-EA2C-47E6-A68A-6DB4D3CB0BFC}
+		{081ACBD0-1CE8-4C78-BDC1-E641A71F6287} = {97440332-EA2C-47E6-A68A-6DB4D3CB0BFC}
+		{0E407F99-0366-416C-A838-30F4A785794A} = {97440332-EA2C-47E6-A68A-6DB4D3CB0BFC}
+		{3EF5C2DD-3583-412A-A5BE-0F71F48E9670} = {97440332-EA2C-47E6-A68A-6DB4D3CB0BFC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3CF6039-0EEA-4EDF-A725-1E66C1C9DCC5}
+	EndGlobalSection
+EndGlobal

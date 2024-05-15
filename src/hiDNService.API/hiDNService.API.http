@@ -1,0 +1,6 @@
+@hiDNService.API_HostAddress = http://localhost:5246
+
+GET {{hiDNService.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

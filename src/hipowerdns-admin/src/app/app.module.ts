@@ -8,10 +8,20 @@ import { AdminErrorHandler } from '@core/handlers/admin-error-handler';
 import { HttpClientModule } from '@angular/common/http';
 import { InitializerModule } from './initializer/initializer.module';
 import { interval, take } from 'rxjs';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ErrorNotFoundComponent } from './pages/error-not-found/error-not-found.component';
+import { FooterComponent } from './layouts/footer/footer.component';
+import { HeaderComponent } from './layouts/header/header.component';
+import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
-    AppComponent    
+    AppComponent,
+    DashboardComponent,
+    ErrorNotFoundComponent,
+    FooterComponent,
+    HeaderComponent,
+    SidebarComponent    
   ],
   imports: [
     HttpClientModule,

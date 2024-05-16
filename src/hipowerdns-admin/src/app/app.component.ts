@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { InitConfigService } from './initializer/init-config.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,19 @@ import { InitConfigService } from './initializer/init-config.service';
 export class AppComponent implements OnInit {
   title = 'PowerDNS - hiPower Administrator';
 
-  constructor(private http: HttpClient, private config: InitConfigService){
+  constructor(private http: HttpClient,
+              private config: InitConfigService,
+              private elementRef: ElementRef,
+              public _router: Router){
   }
 
   ngOnInit(): void {    
+
+    const s = document.createElement("script");
+    s.type = 'txt/javascript';
+    s.src = '../assets/js/main.js';
+    this.elementRef.nativeElement.appendChild(s);
+
     console.log('----------------------------------------------------------');    
     console.log(`api url: ${this.config.api}`);
     console.log(`license check url: ${this.config.licenseCheck}`);

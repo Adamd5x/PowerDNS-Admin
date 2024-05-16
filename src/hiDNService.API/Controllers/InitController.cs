@@ -8,10 +8,19 @@ namespace hiDNService.API.Controllers
     [Produces(MediaTypeNames.Application.Json)]
     public class InitController : ControllerBase
     {
+        private const string ApiUrl = "https://localhost:32772/api";
+
         [HttpGet]
-        public IActionResult Get()
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Dictionary<string, string>))]
+        public IActionResult EndPoints()
         {
-            return Ok ();
+            var endpoints = new Dictionary<string, string>()
+            {
+                { "api", $"{ApiUrl}"},
+                { "licenseCheck", $"{ApiUrl}/license"},
+                {"logging", $"{ApiUrl}/logging" },
+            };
+            return Ok (endpoints);
         }
     }
 }

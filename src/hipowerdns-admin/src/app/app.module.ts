@@ -1,22 +1,24 @@
-import { ErrorHandler, NgModule } from '@angular/core';
+import { APP_INITIALIZER, ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminErrorHandler } from '@core/handlers/admin-error-handler';
-import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+import { InitializerModule } from './initializer/initializer.module';
+import { interval, take } from 'rxjs';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent    
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    InitializerModule
   ],
   providers: [
     {

@@ -8,7 +8,7 @@ namespace hiDNService.API.Controllers
     [Produces(MediaTypeNames.Application.Json)]
     public class InitController : ControllerBase
     {
-        private const string ApiUrl = "https://localhost:32772/api";
+        private const string ApiUrl = "https://localhost:32774/api";
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Dictionary<string, string>))]

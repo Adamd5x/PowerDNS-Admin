@@ -31,6 +31,7 @@
       "@directives/*": ["src/app/shared/directives/*"],
       "@core/*": ["src/app/core/*"],
       "@services/*": ["src/app/core/services/*"],
+      "@records/*" :["src/app/shared/components/records/*"]
     }
   },
   "angularCompilerOptions": {

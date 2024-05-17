@@ -311,7 +311,7 @@
 	border: none;
 	color: #2c384e;
   }
-  .nav-tabs-bordered .nav-link:hover, .nav-tabs-bordered .nav-link:focus {
+  .nav-tabs-bordered .nav-link:hover, .nav-tabs-bordered .nav-link:focus, .nav-link-active {
 	color: #4154f1;
   }
   .nav-tabs-bordered .nav-link.active {

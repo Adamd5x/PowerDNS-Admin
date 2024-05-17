@@ -8,9 +8,9 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
   constructor(private elementRef: ElementRef){}
   ngOnInit(): void {
-    const s = document.createElement("script");
-    s.type = "text/javascript";
-    s.src = '../../../assets/js/main.js'
-    this.elementRef.nativeElement.appendChild(s);
+    // const s = document.createElement("script");
+    // s.type = "text/javascript";
+    // s.src = '../../../assets/js/main.js'
+    // this.elementRef.nativeElement.appendChild(s);
   }
 }

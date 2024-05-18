@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '@app/environments/environment';
+import { environment } from '@app/../environments/environment';
 import { BehaviorSubject, filter, map } from 'rxjs';
 import { Endpoints } from '../shared/models/initApp/endpoints';
 
@@ -25,8 +25,12 @@ export class InitConfigService {
     return this.endpoints.getValue()?.licenseCheck;
   }
 
-  get logging() {
-    return this.endpoints.getValue()?.logging;
+  get logging() : string {
+    const loggingUrl = this.endpoints.getValue()?.logging;
+    if (typeof(loggingUrl) === 'string' ) {
+      return loggingUrl;
+    }
+    return '';
   }
 
   constructor(private http: HttpClient) { }

@@ -1,0 +1,1 @@
+export type LoggingType = 'Information' | 'Warning' | 'Error' | 'CriticalError';

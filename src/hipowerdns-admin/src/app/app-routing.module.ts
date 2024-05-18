@@ -22,7 +22,7 @@ const routes: Routes = [
     'loadChildren' : () => import('./modules/administration/administration.module').then(m => m.AdministrationModule)
   },
   {
-    'path': 'settings',
+    'path': 'settings/templates',
     'loadChildren': () => import('./modules/settings/settings.module').then(m => m.SettingsModule)
   },
   {

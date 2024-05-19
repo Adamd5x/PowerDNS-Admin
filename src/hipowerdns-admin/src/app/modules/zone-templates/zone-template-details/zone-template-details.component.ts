@@ -12,6 +12,8 @@ export class ZoneTemplateDetailsComponent implements OnInit {
 
   data: ZoneTemplateDetails = { id: '', name: '', active: false, records: null};
 
+  displayColumns = ['id', 'name', 'type', 'data', 'ttl', 'active', 'description']
+
   constructor(private activatedRoute: ActivatedRoute) {
 
   }

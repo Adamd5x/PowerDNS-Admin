@@ -18,7 +18,7 @@ import { ZoneTemplateEditComponent } from './zone-template-edit/zone-template-ed
     ZoneTemplateDetailsComponent,
     ZoneTemplateEditComponent
   ],
-  imports: [
+  imports: [    
     FormsModule,
     ReactiveFormsModule,
     CommonModule,

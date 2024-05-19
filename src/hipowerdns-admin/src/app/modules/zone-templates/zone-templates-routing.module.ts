@@ -9,18 +9,12 @@ const routes : Routes = [
     {
         path : '',
         component : TemplatesHomeComponent,
-        resolve: { data: zonesTemplatesResolver },
-        children: [
-            {
-                path: 'edit/:templateId',
-                component: ZoneTemplateDetailsComponent,
-                resolve: { data: zoneTemplateResolver }
-            },
-            {
-                path: 'create',
-                component: ZoneTemplateEditComponent
-            }
-        ]
+        resolve: { data: zonesTemplatesResolver }
+    },
+    {
+        path: ':templateId',
+        component: ZoneTemplateDetailsComponent,
+        resolve: { data: zoneTemplateResolver }
     }
 ]
 

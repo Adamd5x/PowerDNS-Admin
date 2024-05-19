@@ -1,6 +1,5 @@
-export interface ZoneTemplate {
-    'id': string;
-    'name': string;
-    'active': boolean;
-    'records': number;
+import { ZoneTemplateBase } from "./zone-template-base";
+
+export interface ZoneTemplate extends ZoneTemplateBase {
+    records: number;
 }

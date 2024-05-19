@@ -1,5 +1,5 @@
 ﻿using System.Net.Mime;
-using hiDNService.API.Abstract;
+using hiDNService.API.Abstract.ZoneTemplate;
 using Microsoft.AspNetCore.Mvc;
 
 namespace hiDNService.API.Controllers
@@ -32,7 +32,7 @@ namespace hiDNService.API.Controllers
         }
 
         [HttpGet("{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ZoneTemplateResponse))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ZoneTemplateDetailsResponse))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ProblemDetails))]
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ProblemDetails))]
         public IActionResult Get([FromRoute] string id)
@@ -42,12 +42,20 @@ namespace hiDNService.API.Controllers
                 return BadRequest ();
             }
 
-            ZoneTemplateResponse? response = Templates.FirstOrDefault(x => x.Id.ToLower().Equals(id.ToLower()));
+            ZoneTemplateResponse zone =  Templates.FirstOrDefault(x => x.Id.ToLower().Equals(id.ToLower()))!;
 
-            if (response is null)
+            if (zone is null)
             {
-                return NotFound();
+                return NotFound ();
             }
+            ZoneTemplateDetailsResponse response = new ()
+            {
+                Id = zone.Id,
+                Name = zone.Name,
+                Active = zone.Active,
+                Description = string.Empty,
+                Records = []
+            };
             return Ok(response);
         }
     }

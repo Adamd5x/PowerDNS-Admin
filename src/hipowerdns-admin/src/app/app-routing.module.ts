@@ -22,8 +22,8 @@ const routes: Routes = [
     'loadChildren' : () => import('./modules/administration/administration.module').then(m => m.AdministrationModule)
   },
   {
-    'path': 'settings/templates',
-    'loadChildren': () => import('./modules/settings/settings.module').then(m => m.SettingsModule)
+    path: 'templates',
+    loadChildren: () => import('./modules/zone-templates/zone-templates.module').then(m => m.ZoneTemplatesModule)
   },
   {
     'path' : '**',

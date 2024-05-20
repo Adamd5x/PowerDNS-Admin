@@ -10,8 +10,7 @@ const pipes = [
 
 @NgModule({
   declarations: [
-    pipes,
-    DateTimePipe
+    pipes
   ],
   imports: [
     CommonModule

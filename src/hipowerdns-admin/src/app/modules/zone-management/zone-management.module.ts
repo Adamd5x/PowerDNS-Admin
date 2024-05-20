@@ -7,6 +7,8 @@ import { ZoneCreateComponent } from './zone-create/zone-create.component';
 import { ZoneRemoveComponent } from './zone-remove/zone-remove.component';
 import { ZoneManagementRoutingModule } from './zone-management-routing';
 import { AdminErrorHandler } from '@app/core/handlers/admin-error-handler';
+import { ZoneManagementService } from '@app/core/http/zone-management.service';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { AdminErrorHandler } from '@app/core/handlers/admin-error-handler';
     ZoneManagementRoutingModule  
   ],
   providers:[
+    ZoneManagementService,
     {
       provide: ErrorHandler,
       useClass: AdminErrorHandler

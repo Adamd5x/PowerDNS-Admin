@@ -1,17 +1,17 @@
 import { Component, ContentChild, Input, OnInit, TemplateRef } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { LoadingService } from './loading.service';
-import { RouteConfigLoadStart, Router } from '@angular/router';
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouteConfigLoadStart, RouteConfigLoadEnd } from '@angular/router';
 
 @Component({
-  selector: 'loading-indicator',
+  selector: 'loading',
   templateUrl: './loading-indicator.component.html',
   styleUrls: ['./loading-indicator.component.scss']
 })
 export class LoadingIndicatorComponent implements OnInit {
   loading$: Observable<boolean>;
   @Input()
-  detectRouteTransition = false;
+  detectRouteingOngoing = false;
 
   @ContentChild("loading")
   customLoadingIndicator: TemplateRef<any> | null = null;
@@ -22,14 +22,20 @@ export class LoadingIndicatorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.detectRouteTransition) {
+    if (this.detectRouteingOngoing) {
       this.router
           .events
           .pipe(
             tap((event) => {
-              if (event instanceof RouteConfigLoadStart) {
+              if (event instanceof NavigationStart ||
+                  event instanceof RouteConfigLoadStart
+              ) {
                 this.loadingService.loadingOn();
-              } else {
+              } else if (event instanceof NavigationEnd ||
+                         event instanceof NavigationError ||
+                         event instanceof NavigationCancel ||
+                         event instanceof RouteConfigLoadEnd
+              ) {
                 this.loadingService.loadingOff();
               }
             }))

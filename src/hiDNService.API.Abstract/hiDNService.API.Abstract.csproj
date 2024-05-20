@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\hiDNService.API.Model\hiDNService.API.Model.csproj" />
+  </ItemGroup>
+
 </Project>

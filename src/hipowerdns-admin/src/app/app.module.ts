@@ -14,6 +14,10 @@ import { HeaderComponent } from './layouts/header/header.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PassRecoverComponent } from './pages/pass-recover/pass-recover.component';
+import { LoadingService } from './shared/components/loading/loading.service';
+import { LoadingModule } from './shared/components/loading/loading.module';
+import { MessageService } from './shared/components/messages/messages.service';
+import { MessageModule } from './shared/components/messages/messages.module';
 
 @NgModule({
   declarations: [
@@ -31,9 +35,13 @@ import { PassRecoverComponent } from './pages/pass-recover/pass-recover.componen
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    InitializerModule
+    InitializerModule,
+    LoadingModule,
+    MessageModule
   ],
   providers: [
+    LoadingService,
+    MessageService,
     {
       provide: ErrorHandler,
       useClass: AdminErrorHandler

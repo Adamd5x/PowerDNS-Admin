@@ -1,8 +1,9 @@
 <ng-container *ngIf="loading$ | async" >
     <div class="spinner-container">
+        <mat-spinner/>
         <ng-container *ngIfThen="customLoadingIndicator; then custom; else loading">
             <ng-template #loading>
-                <mat-progress-spinner/>
+                <mat-spinner/>
             </ng-template>
             <ng-template #custom>
                 <ng-container *ngTemplateOutlet="customLoadingIndicator"/>

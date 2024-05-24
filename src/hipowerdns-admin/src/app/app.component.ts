@@ -23,11 +23,5 @@ export class AppComponent implements OnInit {
     s.type = 'txt/javascript';
     s.src = '../assets/js/main.js';
     this.elementRef.nativeElement.appendChild(s);
-
-    console.log('----------------------------------------------------------');    
-    console.log(`api url: ${this.config.api}`);
-    console.log(`license check url: ${this.config.licenseCheck}`);
-    console.log(`logging url: ${this.config.logging}`);
-    console.log('----------------------------------------------------------');
   }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Net.Mime;
 using hiDNService.API.Abstract.ZoneTemplate;
-using hiDNService.API.Model;
+using hiDNService.API.Interface;
 using Microsoft.AspNetCore.Mvc;
 
 namespace hiDNService.API.Controllers
@@ -10,66 +10,95 @@ namespace hiDNService.API.Controllers
     [Produces (MediaTypeNames.Application.Json)]
     public class ZoneTemplateController : ControllerBase
     {
-        private static IEnumerable<ZoneTemplateResponse> Templates
+        private readonly IZoneTemplateProvider zoneTemplateProvider;
+
+        public ZoneTemplateController (IZoneTemplateProvider zoneTemplateProvider)
         {
-            get => new List<ZoneTemplateResponse> () {
-                new (){ Id = "a49d6c13-143b-11ef-93ac-a6c88ff1cec2", Name = "Template #1", Active = true, Records = 1 },
-                new (){ Id = "a49d9312-143b-11ef-92d3-e9e5bf30febf", Name = "Template #2", Active = true, Records = 0 },
-                new () { Id = "ce0535c3-143b-11ef-8375-7d91919f1c68", Name = "Template #3", Active = true, Records = 0 },
-                new (){ Id = "6665297a-1527-11ef-ba69-c2570d1147b2", Name = "Template #4", Active = true, Records = 1 },
-                new (){ Id = "6665297a-1527-11ef-ba69-f9a817766e44", Name = "Template #5", Active = true, Records = 0 },
-                new () { Id = "66655152-1527-11ef-9291-5b7b72007480", Name = "Template #6", Active = true, Records = 0 },
-                new () { Id = "66655152-1527-11ef-9291-b95e61ec6d03", Name = "hiDNService .eu", Active = true, Records = 5 },
-                new () { Id = "66655152-1527-11ef-9291-ca5ce0b09532", Name = "hiDNService .pl", Active = true, Records = 5 },
-                new () { Id = "66655152-1527-11ef-9291-8a4c2a685180", Name = "hiDNService .com", Active = true, Records = 5 },
-            };
+            this.zoneTemplateProvider = zoneTemplateProvider;
         }
 
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ZoneTemplateResponse>))]
-        public IActionResult Get()
+        [ProducesResponseType (StatusCodes.Status200OK, Type = typeof (IEnumerable<ZoneTemplateResponse>))]
+        public async Task<IActionResult> Get ()
         {
-            Thread.Sleep (2000);
-            return Ok(Templates);
+            var result = await zoneTemplateProvider.GetTemplatesAsync();
+            return Ok (result.Value);
         }
 
-        [HttpGet("{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ZoneTemplateDetailsResponse))]
-        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ProblemDetails))]
-        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ProblemDetails))]
-        public IActionResult Get([FromRoute] string id)
+        [HttpGet ("{id}")]
+        [ProducesResponseType (StatusCodes.Status200OK, Type = typeof (ZoneTemplateDetailsResponse))]
+        [ProducesResponseType (StatusCodes.Status400BadRequest, Type = typeof (ProblemDetails))]
+        [ProducesResponseType (StatusCodes.Status404NotFound, Type = typeof (ProblemDetails))]
+        public async Task<IActionResult> Get ([FromRoute] string id)
         {
-            if (string.IsNullOrWhiteSpace(id) || !Guid.TryParse(id, out _)) 
+            if (string.IsNullOrWhiteSpace (id) || !Guid.TryParse (id, out _))
             {
                 return BadRequest ();
             }
 
-            ZoneTemplateResponse zone =  Templates.FirstOrDefault(x => x.Id.ToLower().Equals(id.ToLower()))!;
+            var response = await zoneTemplateProvider.GetTemplateAsync(id);
 
-            if (zone is null)
+            if (response.IsError && response.FirstError.Type == ErrorOr.ErrorType.NotFound)
             {
                 return NotFound ();
             }
+            return Ok (response.Value);
+        }
 
-            List<ZoneTemplateRecord> records = 
-            [ 
-                new ZoneTemplateRecord { Id = "ff9ef8cf-1666-11ef-8f38-d42ead4827ff", Name = "alfa", Type = RecordType.A, Data = "192.168.3.20", Ttl = 3600, Active = true, Description = ""},
-                new ZoneTemplateRecord { Id = "ff9ef8cf-1666-11ef-8f38-db9931f340dc", Name = "www", Type = RecordType.CNAME, Data = "www.excample.com", Ttl = 3600, Active = true, Description = ""},
-                new ZoneTemplateRecord { Id = "ff9ef8cf-1666-11ef-8f38-3e82b762a56b", Name = "Name Server 1", Type = RecordType.NS, Data = "ns001eu.hidnservice.net", Ttl = 3600, Active = true, Description = ""},
-                new ZoneTemplateRecord { Id = "ff9ef8cf-1666-11ef-8f38-5de917171df7", Name = "Name Server 2", Type = RecordType.NS, Data = "ns002eu.hidnservice.net", Ttl = 3600, Active = true, Description = ""},
-                new ZoneTemplateRecord { Id = "ff9ef8cf-1666-11ef-8f38-03a3dc5e4766", Name = "beta", Type = RecordType.A, Data = "192.168.3.21", Ttl = 3600, Active = true, Description = ""},
-            ];
-
-            ZoneTemplateDetailsResponse response = new ()
+        [HttpPost]
+        [ProducesResponseType (StatusCodes.Status201Created, Type = typeof (ZoneTemplateDetailsResponse))]
+        [ProducesResponseType (StatusCodes.Status400BadRequest, Type = typeof (ProblemDetails))]
+        [ProducesResponseType (StatusCodes.Status500InternalServerError, Type = typeof (ProblemDetails))]
+        public async Task<IActionResult> Create ([FromBody] ZoneTemplateRequest template)
+        {
+            var result = await zoneTemplateProvider.CreateAsync(template);
+            if (result.IsError)
             {
-                Id = zone.Id,
-                Name = zone.Name,
-                Active = zone.Active,
-                Description = string.Empty,
-                Records = records
-            };
-            Thread.Sleep (2000);
-            return Ok(response);
+                return BadRequest ();
+            }
+            return Created ();
+        }
+
+        [HttpPut ("{templateId}")]
+        [ProducesResponseType (StatusCodes.Status202Accepted, Type = typeof (ZoneTemplateDetailsResponse))]
+        [ProducesResponseType (StatusCodes.Status400BadRequest, Type = typeof (ProblemDetails))]
+        [ProducesResponseType (StatusCodes.Status500InternalServerError, Type = typeof (ProblemDetails))]
+        public async Task<IActionResult> Update ([FromRoute] string templateId, [FromBody] ZoneTemplateRequest response)
+        {
+
+            return Accepted ();
+        }
+
+        [HttpDelete ("{templateId}")]
+        public async Task<IActionResult> Delete ([FromRoute] string templateId)
+        {
+            return Ok ();
+        }
+
+        [HttpPost("{templateId}/record")]
+        [ProducesResponseType (StatusCodes.Status201Created)]
+        [ProducesResponseType (StatusCodes.Status400BadRequest, Type = typeof (ProblemDetails))]
+        [ProducesResponseType (StatusCodes.Status500InternalServerError, Type = typeof (ProblemDetails))]
+        public async Task<IActionResult> CreateRecord ([FromRoute] string templateId, [FromBody] ZoneTemplateRecord record)
+        {
+            return Created ();
+        }
+
+        [HttpPut("{templateId}/record/{recordId}")]
+        [ProducesResponseType (StatusCodes.Status202Accepted)]
+        [ProducesResponseType (StatusCodes.Status404NotFound, Type = typeof (ProblemDetails))]
+        public async Task<IActionResult> UpdateRecord ([FromRoute] string templateId, [FromRoute] string recordId, [FromBody] ZoneTemplateRecord record)
+        {
+            return Accepted ();
+        }
+
+        [HttpDelete("{templateId}/record/{recordId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType (StatusCodes.Status400BadRequest, Type = typeof (ProblemDetails))]
+        [ProducesResponseType (StatusCodes.Status404NotFound, Type = typeof (ProblemDetails))]
+        public async Task<IActionResult> DeleteRecord ([FromRoute] string templateId, [FromRoute] string recordId)
+        {
+            return Ok ();
         }
     }
 }

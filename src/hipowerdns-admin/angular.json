@@ -7,7 +7,7 @@
       "i18n": {
         "sourceLocale": "en-US",
         "locales": {
-          "pl-PL": "src/locale/messages.pl.xlf"
+          "pl-PL": "src/locale/messages.pl-PL.xlf"
         }
       },
       "projectType": "application",
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "localize": ["pl-PL"],
+            "localize": ["en-US"],
             "outputPath": "dist/hipowerdns-admin",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -48,8 +48,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "86kb",
-                  "maximumError": "12mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",

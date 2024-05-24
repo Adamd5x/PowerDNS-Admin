@@ -1,7 +1,6 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-@import '~material-icons/iconfont/material-icons.css';
 
 :root {
 	scroll-behavior: smooth;
@@ -1069,4 +1068,9 @@
 	text-align: center;
 	font-size: 13px;
 	color: #012970;
+  }
+
+
+  mat-dialog-actions {
+	background-color: #efefef;
   }

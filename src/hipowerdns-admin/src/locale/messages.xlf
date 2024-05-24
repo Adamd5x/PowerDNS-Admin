@@ -15,12 +15,20 @@
           <context context-type="sourcefile">src/app/layouts/sidebar/sidebar.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-management/home/home.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="4377629928032707348" datatype="html">
         <source>Zones</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/layouts/sidebar/sidebar.component.html</context>
           <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-management/home/home.component.html</context>
+          <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5639594841545607104" datatype="html">
@@ -104,6 +112,39 @@
           <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="2821179408673282599" datatype="html">
+        <source>Home</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-management/home/home.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1108696036559272512" datatype="html">
+        <source>Example Card</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-management/home/home.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-management/home/home.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6773265409688093026" datatype="html">
+        <source>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-management/home/home.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-management/home/home.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="3427609215363629949" datatype="html">
         <source>Zones Templates</source>
         <context-group purpose="location">
@@ -181,13 +222,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
           <context context-type="linenumber">3</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="2821179408673282599" datatype="html">
-        <source>Home</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
-          <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4933176922467799991" datatype="html">

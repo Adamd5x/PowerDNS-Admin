@@ -1,14 +1,20 @@
 using System.Text.Json.Serialization;
 using hiDNService.API.Core;
 using hiDNService.API.Infrastructure;
+using hiDNService.API.Infrastructure.Database;
+using hiDNService.API.Service;
+using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Host.UseSerilog ((hostingCtx, configuration) => {
+    configuration.ReadFrom.Configuration (hostingCtx.Configuration);
+});
 
+builder.Services.AddHostedService<StatisticsService> ();
 
-
-builder.Services.AddInfrastructure ()
+builder.Services.AddInfrastructure (builder.Configuration)
                 .AddCoreServices();
 
 builder.Services.AddControllers ()
@@ -17,7 +23,6 @@ builder.Services.AddControllers ()
                     options.JsonSerializerOptions.Converters.Add (enumConverter);
                 });
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer ();
 builder.Services.AddSwaggerGen ();
 
@@ -29,7 +34,18 @@ builder.Services.AddCors (options => options.AddDefaultPolicy (policy => {
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+using var scope = app.Services.CreateScope ();
+var dbContext = scope.ServiceProvider.GetService<ApiDbContext>();
+if (dbContext is not null)
+{
+    var pendingMigrations = await dbContext.Database.GetPendingMigrationsAsync();
+    if (pendingMigrations.Any())
+    {
+        await dbContext.Database.MigrateAsync ();
+    }
+}
+
+
 if (app.Environment.IsDevelopment ())
 {
     app.UseSwagger ();

@@ -30,7 +30,8 @@
       "@pipes/*": ["src/app/shared/pipes/*"],
       "@directives/*": ["src/app/shared/directives/*"],
       "@core/*": ["src/app/core/*"],
-      "@services/*": ["src/app/core/services/*"],
+      "@services/*": ["src/app/services/*"],
+      "@dataServices/*": ["src/app/services/data/*"],
       "@records/*" :["src/app/shared/components/records/*"]
     }
   },

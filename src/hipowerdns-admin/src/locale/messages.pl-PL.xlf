@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="6570363013146073520" datatype="html">
+        <source>Dashboard</source>
+        <target>Dashboard</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layouts/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3113983887809589662" datatype="html">
+        <source>Zone management</source>
+        <target>Zarządzanie strefami</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layouts/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4377629928032707348" datatype="html">
+        <source>Zones</source>
+        <target>Strefy</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layouts/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5639594841545607104" datatype="html">
+        <source>Create Zone</source>
+        <target>Utwórz Strefę</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layouts/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3247854985690020301" datatype="html">
+        <source>Remove Zone</source>
+        <target>Usuń Strefę</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layouts/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7844706011418789951" datatype="html">
+        <source>Administration</source>
+        <target>Administracja</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layouts/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6215338719113626053" datatype="html">
+        <source>Global Search</source>
+        <target>Wyszukiwanie Globalne</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layouts/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5306473977542913614" datatype="html">
+        <source>Activity</source>
+        <target>Aktywność</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layouts/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5438849030927532653" datatype="html">
+        <source>Server Statistics</source>
+        <target>Statystyki Serwera</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layouts/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4555457172864212828" datatype="html">
+        <source>Users</source>
+        <target>Użytkownicy</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layouts/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4930506384627295710" datatype="html">
+        <source>Settings</source>
+        <target>Ustawienia</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layouts/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8867430723568272856" datatype="html">
+        <source>Server Profile</source>
+        <target>Profil Serwera</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layouts/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4915431133669985304" datatype="html">
+        <source>Profile</source>
+        <target>Profil</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layouts/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4299057803223975333" datatype="html">
+        <source>Zone Templates</source>
+        <target>Wzorce Strefy</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layouts/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1108696036559272512" datatype="html">
+        <source>Example Card</source>
+        <target>Karta Przykładowa</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-management/home/home.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-management/home/home.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6773265409688093026" datatype="html">
+        <source>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</source>
+        <target>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-management/home/home.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-management/home/home.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6773265409688093026" datatype="html">
+        <source>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</source>
+        <target>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-management/home/home.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-management/home/home.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3427609215363629949" datatype="html">
+        <source>Zones Templates</source>
+        <target>Wzorce Stref</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/templates-home/templates-home.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8953033926734869941" datatype="html">
+        <source>Name</source>
+        <target>Nazwa</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/templates-home/templates-home.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5753920117087521094" datatype="html">
+        <source>Templates: <x id="INTERPOLATION" equiv-text="{{ data.length }}"/></source>
+        <target>Ilość: <x id="INTERPOLATION" equiv-text="{{ data.length }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/templates-home/templates-home.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3917644028160931566" datatype="html">
+        <source>Records</source>
+        <target>Rekordy</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/templates-home/templates-home.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8204176479746810612" datatype="html">
+        <source>Active</source>
+        <target>Aktywny</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/templates-home/templates-home.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9216117865911519658" datatype="html">
+        <source>Action</source>
+        <target>Akcje</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/templates-home/templates-home.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4693074741501936396" datatype="html">
+        <source>About templates</source>
+        <target>O wzorcach</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/templates-home/templates-home.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9078138527746920209" datatype="html">
+        <source><x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>Sit eos ut ullamcorper eros sea ad no placerat aliquip ea sed sanctus volutpat sit. Eum stet erat. Commodo est elitr enim et ex sadipscing iusto et. Sanctus ipsum lorem vero euismod sed. Ut consetetur ut. Lorem erat liber sadipscing lorem esse. Magna ut kasd. Gubergren sed duis.<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/><x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>Est luptatum dolore duo ea kasd ea ut ipsum consequat eros assum duo est consetetur. Diam kasd sit lorem. Nonumy rebum dolores exerci at eirmod dolor tempor praesent no. Amet dolor sit te et sed no ipsum at amet accusam et voluptua amet consetetur lorem sed. Aliquyam lobortis sed vel duis. Et consetetur at mazim nulla vulputate blandit ea at velit consetetur ea no duo amet lorem ipsum ipsum vero.<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/></source>
+        <target><x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>Sit eos ut ullamcorper eros sea ad no placerat aliquip ea sed sanctus volutpat sit. Eum stet erat. Commodo est elitr enim et ex sadipscing iusto et. Sanctus ipsum lorem vero euismod sed. Ut consetetur ut. Lorem erat liber sadipscing lorem esse. Magna ut kasd. Gubergren sed duis.<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/><x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>Est luptatum dolore duo ea kasd ea ut ipsum consequat eros assum duo est consetetur. Diam kasd sit lorem. Nonumy rebum dolores exerci at eirmod dolor tempor praesent no. Amet dolor sit te et sed no ipsum at amet accusam et voluptua amet consetetur lorem sed. Aliquyam lobortis sed vel duis. Et consetetur at mazim nulla vulputate blandit ea at velit consetetur ea no duo amet lorem ipsum ipsum vero.<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/templates-home/templates-home.component.html</context>
+          <context context-type="linenumber">63,64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6614811307743505834" datatype="html">
+        <source>Zone Template</source>
+        <target>Wzorzec Strefy</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2821179408673282599" datatype="html">
+        <source>Home</source>
+        <target>Start</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4933176922467799991" datatype="html">
+        <source>Zones templates</source>
+        <target>Wzorce stref</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5610425955750546094" datatype="html">
+        <source>Template</source>
+        <target>Wzorzec</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7145011973848309749" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>save<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Save</source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>save<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Zapisz</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8510225983560815496" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>add<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Add record</source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>add<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Dodaj rekord</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4863292920559464638" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Template<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Wzorzec<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7114261822427678926" datatype="html">
+        <source><x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>Stet commodo eirmod iusto ut gubergren et lorem et gubergren ea labore magna mazim voluptua aliquyam. Et iusto ex augue sit labore justo elitr dolore ut ut diam tempor eum sed. Odio ipsum et stet lorem consequat eum diam diam sanctus ea tation amet clita duis. Doming ipsum vero possim sed aliquip dolores no. Dolore mazim voluptua vel no clita et sed odio rebum diam sadipscing dolores feugiat nibh at et. Takimata eleifend nonummy aliquyam ea vel ut tempor duo. Et invidunt dolor dolor dolor labore takimata erat odio elitr magna consetetur lorem erat at dolor gubergren vulputate sed. Dolor augue sanctus dolore kasd delenit duo labore. Invidunt et et consetetur erat sea aliquam. Eirmod sed dolores suscipit ex eos aliquyam. Clita dolor nobis et duo consetetur sit et magna.<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/><x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>Est diam gubergren dolores laoreet dolor magna iriure ut dolor accusam elitr. Sed sadipscing et clita tempor at feugait lorem duo at rebum duo vulputate vero. Ipsum clita nonummy facilisi eos ipsum et clita commodo takimata nisl consetetur ea dolores. Diam amet sit amet eirmod sit clita commodo clita nam stet voluptua ullamcorper zzril dolor. Vel enim vero dolore facer odio facilisis dolor. Rebum dolore facer tempor nisl magna sed.<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/></source>
+        <target><x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>Stet commodo eirmod iusto ut gubergren et lorem et gubergren ea labore magna mazim voluptua aliquyam. Et iusto ex augue sit labore justo elitr dolore ut ut diam tempor eum sed. Odio ipsum et stet lorem consequat eum diam diam sanctus ea tation amet clita duis. Doming ipsum vero possim sed aliquip dolores no. Dolore mazim voluptua vel no clita et sed odio rebum diam sadipscing dolores feugiat nibh at et. Takimata eleifend nonummy aliquyam ea vel ut tempor duo. Et invidunt dolor dolor dolor labore takimata erat odio elitr magna consetetur lorem erat at dolor gubergren vulputate sed. Dolor augue sanctus dolore kasd delenit duo labore. Invidunt et et consetetur erat sea aliquam. Eirmod sed dolores suscipit ex eos aliquyam. Clita dolor nobis et duo consetetur sit et magna.<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/><x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>Est diam gubergren dolores laoreet dolor magna iriure ut dolor accusam elitr. Sed sadipscing et clita tempor at feugait lorem duo at rebum duo vulputate vero. Ipsum clita nonummy facilisi eos ipsum et clita commodo takimata nisl consetetur ea dolores. Diam amet sit amet eirmod sit clita commodo clita nam stet voluptua ullamcorper zzril dolor. Vel enim vero dolore facer odio facilisis dolor. Rebum dolore facer tempor nisl magna sed.<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
+          <context context-type="linenumber">46,47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8650499415827640724" datatype="html">
+        <source>Type</source>
+        <target>Rodzaj</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="146442697456175258" datatype="html">
+        <source>Data</source>
+        <target>Dane</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3651247071766886662" datatype="html">
+        <source>TTL</source>
+        <target>TTL</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1810652614430997818" datatype="html">
+        <source><x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th mat-header-cell *matHeaderCellDef&gt;"/>Description<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/><x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td mat-cell *matCellDef=&quot;let element&quot;&gt;"/><x id="INTERPOLATION" equiv-text="{{ element.description }}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/></source>
+        <target><x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th mat-header-cell *matHeaderCellDef&gt;"/>Opis<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/><x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td mat-cell *matCellDef=&quot;let element&quot;&gt;"/><x id="INTERPOLATION" equiv-text="{{ element.description }}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/zone-templates/zone-template-details/zone-template-details.component.html</context>
+          <context context-type="linenumber">76,77</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

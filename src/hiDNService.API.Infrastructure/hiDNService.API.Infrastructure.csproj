@@ -10,4 +10,8 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\hiDNService.API.Infrastructure.Database\hiDNService.API.Infrastructure.Database.csproj" />
+  </ItemGroup>
+
 </Project>

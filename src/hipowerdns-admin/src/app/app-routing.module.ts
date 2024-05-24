@@ -18,12 +18,8 @@ const routes: Routes = [
     'loadChildren' : () => import('./modules/zone-management/zone-management.module').then(m => m.ZoneManagementModule)
   },
   {
-    'path': 'administration',
-    'loadChildren' : () => import('./modules/administration/administration.module').then(m => m.AdministrationModule)
-  },
-  {
     path: 'templates',
-    loadChildren: () => import('./modules/zone-templates/zone-templates.module').then(m => m.ZoneTemplatesModule)
+    loadChildren: () => import('./modules/zone-template/zone-template.module').then(m => m.ZoneTemplateModule)
   },
   {
     'path' : '**',

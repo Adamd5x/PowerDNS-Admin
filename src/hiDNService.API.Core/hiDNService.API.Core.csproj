@@ -7,7 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ErrorOr" Version="2.0.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\hiDNService.API.Abstract\hiDNService.API.Abstract.csproj" />
+    <ProjectReference Include="..\hiDNService.API.Infrastructure.Database\hiDNService.API.Infrastructure.Database.csproj" />
+    <ProjectReference Include="..\hiDNService.API.Interface\hiDNService.API.Interface.csproj" />
+    <ProjectReference Include="..\hiDNService.API.Model\hiDNService.API.Model.csproj" />
   </ItemGroup>
 
 </Project>

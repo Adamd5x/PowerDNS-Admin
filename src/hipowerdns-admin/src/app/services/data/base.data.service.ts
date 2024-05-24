@@ -45,10 +45,10 @@ export class BaseDataService {
                    headers?: HttpHeaders | {[header: string]: string | string[]},
                    params?: HttpParams|{[param: string]: string | number | boolean | ReadonlyArray<string | number | boolean>},
                    withCredentials?: boolean): Observable<any> {
-
+        
         const url = `${this.config.api}/${entryUrl}`;
         return this.http.post<T>(url,
-                        entry,
+                         entry,
                          {
                              headers: headers,
                              params: params,
@@ -60,10 +60,11 @@ export class BaseDataService {
     }
 
 
-    update<T>(url: string, entry: Partial<T>, 
-        headers?: HttpHeaders | {[header: string]: string | string[]},
-        params?: HttpParams|{[param: string]: string | number | boolean | ReadonlyArray<string | number | boolean>},
-        withCredentials?: boolean): Observable<any> {
+    public update<T>(entryUrl: string, entry: Partial<T>, 
+              headers?: HttpHeaders | {[header: string]: string | string[]},
+              params?: HttpParams|{[param: string]: string | number | boolean | ReadonlyArray<string | number | boolean>},
+              withCredentials?: boolean): Observable<any> {
+        const url = `${this.config.api}/${entryUrl}`;
         return this.http.put(url, entry, {
             headers: headers,
             params: params,
@@ -74,10 +75,11 @@ export class BaseDataService {
     }
 
 
-    delete(url: string,
-              headers?: HttpHeaders | {[header: string]: string | string[]},
-              params?: HttpParams|{[param: string]: string | number | boolean | ReadonlyArray<string | number | boolean>}): Observable<any> {
+    public delete(entryUrl: string,
+           headers?: HttpHeaders | {[header: string]: string | string[]},
+           params?: HttpParams|{[param: string]: string | number | boolean | ReadonlyArray<string | number | boolean>}): Observable<any> {
         
+            const url = `${this.config.api}/${entryUrl}`;
     return this.http.delete(url, {
                 headers: headers,
                 params: params

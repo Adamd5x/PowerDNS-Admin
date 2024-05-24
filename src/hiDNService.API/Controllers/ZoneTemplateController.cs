@@ -63,15 +63,16 @@ namespace hiDNService.API.Controllers
         [ProducesResponseType (StatusCodes.Status202Accepted, Type = typeof (ZoneTemplateDetailsResponse))]
         [ProducesResponseType (StatusCodes.Status400BadRequest, Type = typeof (ProblemDetails))]
         [ProducesResponseType (StatusCodes.Status500InternalServerError, Type = typeof (ProblemDetails))]
-        public async Task<IActionResult> Update ([FromRoute] string templateId, [FromBody] ZoneTemplateRequest response)
+        public async Task<IActionResult> Update ([FromRoute] string templateId, [FromBody] ZoneTemplateRequest template)
         {
-
+            var result = await zoneTemplateProvider.UpdateAsync(templateId, template);
             return Accepted ();
         }
 
         [HttpDelete ("{templateId}")]
-        public async Task<IActionResult> Delete ([FromRoute] string templateId)
+        public async Task<IActionResult> Delete (string templateId)
         {
+            var result = await zoneTemplateProvider.DeleteAsync(templateId);
             return Ok ();
         }
 

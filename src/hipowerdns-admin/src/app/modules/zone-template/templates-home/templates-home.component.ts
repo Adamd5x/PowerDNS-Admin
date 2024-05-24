@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule, MatDialogConfig} from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 import { ZoneTemplate } from '@app/shared/models/zone-template/zone-template';
 import { ZoneTemplateDialogComponent } from '../zone-template-dialog/zone-template-dialog.component';
+import { ZoneTemplateService } from '../../../services/data/zone-template.service';
+import { ZoneTemplateRequest } from '../models';
+
 
 @Component({
   selector: 'app-templates-home',
@@ -17,13 +20,11 @@ export class TemplatesHomeComponent implements OnInit {
   displayColumns = ['name', 'records', 'active', 'id' ];
 
   constructor(private activatedRoute: ActivatedRoute,
+              private dataService: ZoneTemplateService,
               public dialog: MatDialog){}
 
   ngOnInit(): void {
-    this.activatedRoute
-        .data
-        .subscribe(({data}) => {
-          this.data = data;});
+    this.getData();
   }
 
   onAddNewTemplate(): void {
@@ -34,11 +35,43 @@ export class TemplatesHomeComponent implements OnInit {
       data: { templateId: ''}
     }
     const dialogRef = this.dialog.open(ZoneTemplateDialogComponent, dialogConf);
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog: Zone-Template was closed`);
-      if (result){
-        console.log(`Data : ${ JSON.stringify(result)}`);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        const newTemplate : ZoneTemplateRequest = {
+          id: '0000-0000-0000',
+          name: result.name,
+          description: result.description,
+          active: result.isActive
+        }
+
+        this.dataService
+            .createTemplate(newTemplate)
+            .subscribe({
+              next: () => {},
+              error: () => {},
+              complete: () => this.getData()
+            });
       }
     });
+  }
+
+  onDeleteTemplate(templateId: string): void {
+    this.dataService
+        .deleteTemplate(templateId)
+        .subscribe({
+          next: () => {},
+          error: () => {},
+          complete: () => this.getData()
+        })
+  }
+
+  private getData(): void {
+    this.dataService
+    .getTemplates()
+    .subscribe({
+      next: (response) => {
+        this.data = response;
+  }})
   }
 }

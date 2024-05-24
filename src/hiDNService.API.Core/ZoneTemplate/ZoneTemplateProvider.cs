@@ -24,7 +24,7 @@ public sealed class ZoneTemplateProvider : IZoneTemplateProvider, IDisposable
     {
         Entity.ZoneTemplate newTemplate = new() 
         { 
-            ItemId = Guid.NewGuid().ToString(),
+            ItemId = Guid.NewGuid().ToString().ToLower(),
             Name = template.Name,
             Description = template.Description,
             IsActive = template.Active
@@ -39,37 +39,117 @@ public sealed class ZoneTemplateProvider : IZoneTemplateProvider, IDisposable
         return Error.Failure ();
     }
 
-    public Task<ErrorOr<ZoneTemplateDetailsResponse>> CreateRecordAsync (string templateId, ZoneTemplateRecord record)
+    public async Task<ErrorOr<ZoneTemplateDetailsResponse>> CreateRecordAsync (string templateId, ZoneTemplateRecord record)
     {
-        throw new NotImplementedException ();
+        string normalizedId = templateId.ToLower();
+
+        Entity.ZoneTemplateRecord newRecord = new()
+        {
+            ItemId = Guid.NewGuid().ToString(),
+            Name = record.Name,
+            Description = record.Description,
+            Data = record.Data,
+            TTL = record.Ttl,
+            Type = nameof(record.Type),
+            IsActive = record.Active,
+            ZoneTemplateId = normalizedId,
+        };
+
+        apiDbContext.ZoneTemplateRecords.Add (newRecord);
+        bool saved = (await apiDbContext.SaveChangesAsync () > 0);
+
+        if (saved)
+        {
+            return await GetTemplateAsync(normalizedId);
+        }
+        return Error.Failure ();
     }
 
-    public Task<ErrorOr<bool>> DeleteAsync (string templateId)
+    public async Task<ErrorOr<bool>> DeleteAsync (string templateId)
     {
-        throw new NotImplementedException ();
+        string normalizedId = templateId.ToLower();
+        try
+        {
+            await apiDbContext.Database.BeginTransactionAsync ();
+
+            var items = await apiDbContext.ZoneTemplateRecords
+                                          .Where(x => x.ItemId.ToLower().Equals(normalizedId))
+                                          .ToListAsync();
+    
+            apiDbContext.ZoneTemplateRecords.RemoveRange(items);
+
+            apiDbContext.ZonesTemplates.Remove (new Entity.ZoneTemplate { ItemId = templateId });
+
+            await apiDbContext.SaveChangesAsync ();
+
+            await apiDbContext.Database.CommitTransactionAsync ();
+            return true;
+        }
+        catch(Exception ex)
+        {
+            await apiDbContext.Database.RollbackTransactionAsync ();
+            logger.LogError ("Error while deleting Zone Template, exception: {ex}", ex);
+            return Error.Failure ();
+        }
     }
 
-    public Task<ErrorOr<bool>> DeleteRecordAsync (string templateId, string recordId)
+    public async Task<ErrorOr<bool>> DeleteRecordAsync (string templateId, string recordId)
     {
-        throw new NotImplementedException ();
+        apiDbContext.ZoneTemplateRecords.Remove (new Entity.ZoneTemplateRecord { ItemId = recordId});
+        return (await apiDbContext.SaveChangesAsync () > 0);
     }
 
-    public Task<ErrorOr<ZoneTemplateRecord>> GetRecordAsync (string templateId, string recordId)
+    public async Task<ErrorOr<ZoneTemplateRecord>> GetRecordAsync (string templateId, string recordId)
     {
-        throw new NotImplementedException ();
+        string normalizedId = templateId.ToLower();
+        string normalizedRecordId = recordId.ToLower();
+
+        var result = await apiDbContext.ZoneTemplateRecords
+                                       .FirstOrDefaultAsync(x => x.ZoneTemplateId.ToLower().Equals(normalizedId) &&
+                                                                 x.ItemId.ToLower().Equals(normalizedRecordId));
+
+        if (result is null)
+        {
+            return Error.NotFound ();
+        }
+
+        return new ZoneTemplateRecord
+        {
+            Id = result.ItemId,
+            Name = result.Name,
+            Type = Enum.Parse<RecordType>(result.Type),
+            Data = result.Data,
+            Ttl = result.TTL,
+            Active = result.IsActive,
+            Description = result.Description
+        };
     }
 
-    public Task<ErrorOr<IEnumerable<ZoneTemplateRecord>>> GetRecordsAsync (string templateId)
+    public async Task<ErrorOr<IEnumerable<ZoneTemplateRecord>>> GetRecordsAsync (string templateId)
     {
-        throw new NotImplementedException ();
+        string normalizedId = templateId.ToLower();
+
+        return await apiDbContext.ZoneTemplateRecords
+                                 .Where (x => x.ZoneTemplateId.ToLower().Equals (normalizedId))
+                                 .Select (x => new ZoneTemplateRecord
+                                 {
+                                     Id = x.ItemId,
+                                     Name = x.Name,
+                                     Data = x.Data,
+                                     Ttl = x.TTL,
+                                     Active = x.IsActive,
+                                     Description = x.Description,
+                                     Type = Enum.Parse<RecordType> (x.Type)
+                                 }).ToListAsync();
     }
 
     public async Task<ErrorOr<ZoneTemplateDetailsResponse>> GetTemplateAsync (string id)
     {
+        string normalizedId = id.ToLower();
 
         var result = await apiDbContext.ZonesTemplates
                               .Include(x => x.Records)
-                              .FirstOrDefaultAsync(x => x.ItemId.Equals (id, StringComparison.CurrentCultureIgnoreCase));
+                              .FirstOrDefaultAsync(x => x.ItemId.ToLower().Equals (normalizedId));
 
         if (result is null)
         {
@@ -111,7 +191,7 @@ public sealed class ZoneTemplateProvider : IZoneTemplateProvider, IDisposable
         return result;
     }
 
-    public Task<ErrorOr<ZoneTemplateDetailsResponse>> UpdateAsync (ZoneTemplateRequest template)
+    public Task<ErrorOr<ZoneTemplateDetailsResponse>> UpdateAsync (string templateId, ZoneTemplateRequest template)
     {
         throw new NotImplementedException ();
     }

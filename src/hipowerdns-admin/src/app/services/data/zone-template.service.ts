@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { ZoneTemplate } from '@app/shared/models/zone-template/zone-template';
 import { ZoneTemplateDetails } from '@app/shared/models/zone-template';
+import { ZoneTemplateRequest } from '@app/modules/zone-template/models/zone-template-request';
 
 
 @Injectable({
@@ -25,15 +26,15 @@ export class ZoneTemplateService extends BaseDataService {
     return this.get<ZoneTemplateDetails>(`${this.controllerName}/${id}`)
   }
 
-  createTemplate(entry: any): void {
-
+  createTemplate(entry: ZoneTemplateRequest): Observable<void> {
+    return this.post<ZoneTemplateRequest>(`${this.controllerName}`, entry);
   }
 
-  updateTemplate(id: string, entry: any): void {
-
+  updateTemplate(id: string, entry: ZoneTemplateRequest): Observable<void> {
+    return this.update<ZoneTemplateRequest>(`${this.controllerName}/${id}`, entry);
   }
 
-  deleteTemplate(id: string): void {
-
+  deleteTemplate(id: string): Observable<void> {
+    return this.delete(`${this.controllerName}/${id}`);
   }
 }

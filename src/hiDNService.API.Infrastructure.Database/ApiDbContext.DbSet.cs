@@ -7,6 +7,6 @@ namespace hiDNService.API.Infrastructure.Database
     {
         public DbSet<ZoneTemplate> ZonesTemplates { get; set; }
 
-        public DbSet<ZoneTemplateRecord> ZonesRecords { get; set; }
+        public DbSet<ZoneTemplateRecord> ZoneTemplateRecords { get; set; }
     }
 }

@@ -8,7 +8,7 @@ public interface IZoneTemplateProvider
     Task<ErrorOr<IEnumerable<ZoneTemplateResponse>>> GetTemplatesAsync ();
     Task<ErrorOr<ZoneTemplateDetailsResponse>> GetTemplateAsync (string id);
     Task<ErrorOr<ZoneTemplateDetailsResponse>> CreateAsync (ZoneTemplateRequest template);
-    Task<ErrorOr<ZoneTemplateDetailsResponse>> UpdateAsync (ZoneTemplateRequest template);
+    Task<ErrorOr<ZoneTemplateDetailsResponse>> UpdateAsync (string templateId, ZoneTemplateRequest template);
     Task<ErrorOr<bool>> DeleteAsync (string templateId);
 
     Task<ErrorOr<IEnumerable<ZoneTemplateRecord>>> GetRecordsAsync (string templateId);

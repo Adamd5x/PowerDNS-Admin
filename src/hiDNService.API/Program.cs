@@ -12,7 +12,7 @@ builder.Host.UseSerilog ((hostingCtx, configuration) => {
     configuration.ReadFrom.Configuration (hostingCtx.Configuration);
 });
 
-builder.Services.AddHostedService<StatisticsService> ();
+//builder.Services.AddHostedService<StatisticsService> ();
 
 builder.Services.AddInfrastructure (builder.Configuration)
                 .AddCoreServices();

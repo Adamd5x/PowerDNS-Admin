@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule, MatDialogConfig } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { ZoneTemplateDetails } from '@app/shared/models/zone-template';
+import { ZoneTemplateRecordDialogComponent } from '../zone-template-record-dialog/zone-template-record-dialog.component';
 
 
 @Component({
@@ -24,7 +25,18 @@ export class ZoneTemplateDetailsComponent implements OnInit {
   }
 
   onAddRecord(): void {
+    const dialogConf: MatDialogConfig = {
+      width: '800px',
+      height: '500px'
+    }
 
+    const ref = this.dialog.open(ZoneTemplateRecordDialogComponent, dialogConf);
+
+    ref.afterClosed().subscribe((result) => {
+      if (result) {
+        
+      }
+    });
   }
 
   onEditRecord(): void {

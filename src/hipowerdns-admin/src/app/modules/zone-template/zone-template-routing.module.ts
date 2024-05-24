@@ -7,8 +7,7 @@ import { ZoneTemplateDetailsComponent } from "./zone-template-details/zone-templ
 const routes : Routes = [
     {
         path : '',
-        component : TemplatesHomeComponent,
-        resolve: { data: zonesTemplatesResolver }
+        component : TemplatesHomeComponent
     },
     {
         path: ':templateId',

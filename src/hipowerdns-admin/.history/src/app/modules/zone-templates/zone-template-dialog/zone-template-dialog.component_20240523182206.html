@@ -1,0 +1,22 @@
+<div mat-dialog-title>
+    {{ title }}
+</div>
+<mat-dialog-content>
+    <div class="card-body p-2">
+        <mat-form-field class="w-100">
+            <mat-label>Name</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <mat-form-field class="w-100">
+            <mat-label>Description</mat-label>
+            <textarea matInput rows="5"></textarea>
+        </mat-form-field>
+        <mat-checkbox>Active</mat-checkbox>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions style="background-color: silver;">
+    <div class="text-end w-100">
+        <button mat-raised-button (click)="onSave()" color="primary"><mat-icon>save</mat-icon> Save</button>
+        <button mat-raised-button (click)="onCancel()" color="secondary"><mat-icon>cancel</mat-icon> Cancel</button>
+    </div>
+</mat-dialog-actions>

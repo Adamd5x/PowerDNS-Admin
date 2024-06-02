@@ -1,0 +1,103 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+       <h1>Zones Templates</h1>
+       <nav>
+          <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+             <li class="breadcrumb-item">Settings</li>
+             <li class="breadcrumb-item active">Zones templates</li>
+          </ol>
+       </nav>
+    </div>
+    <section class="section">
+      <div class="row">
+         <div class="col-lg-12">
+            <div class="card">
+               <div class="card-body p-2 text-end">
+                  <a class="btn btn-primary" routerLink="template/create"><i class="bi bi-plus"></i> Add new template</a>
+               </div>
+            </div>
+         </div>
+      </div>      
+       <div class="row">
+          <div class="col-lg-7">
+             <div class="card">
+                <div class="card-body">
+                  <table class="table table-hover">
+                     <thead>
+                        <tr>
+                           <th scope="col" class="col-sm-1">#</th>
+                           <th scope="col">Name</th>
+                           <th scope="col" class="col-sm-1">Records</th>
+                           <th scope="col" class="col-sm-1 text-center">Active</th>
+                           <th scope="col" class="col-sm-2 text-center">Action</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th scope="row">1</th>
+                           <td>Brandon Jacob</td>
+                           <td class="text-center">0</td>
+                           <td class="text-center"><i class="bi bi-check-circle-fill" style="color:forestgreen"></i></td>
+                           <td class="text-center">
+                              <a class="btn btn-primary btn-sm"><i class="bi bi-pencil"></i></a>&nbsp;
+                              <a class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th scope="row">2</th>
+                           <td>Brandon Jacob</td>
+                           <td class="text-center">0</td>
+                           <td class="text-center"><i class="bi bi-check-circle-fill" style="color:forestgreen"></i></td>
+                           <td class="text-center">
+                              <a class="btn btn-primary btn-sm"><i class="bi bi-pencil"></i></a>&nbsp;
+                              <a class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th scope="row">3</th>
+                           <td>Brandon Jacob</td>
+                           <td class="text-center">0</td>
+                           <td class="text-center"><i class="bi bi-check-circle-fill" style="color:forestgreen"></i></td>
+                           <td class="text-center">
+                              <a class="btn btn-primary btn-sm"><i class="bi bi-pencil"></i></a>&nbsp;
+                              <a class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th scope="row">4</th>
+                           <td>Brandon Jacob</td>
+                           <td class="text-center">0</td>
+                           <td class="text-center"><i class="bi bi-check-circle-fill" style="color:forestgreen"></i></td>
+                           <td class="text-center">
+                              <a class="btn btn-primary btn-sm"><i class="bi bi-pencil"></i></a>&nbsp;
+                              <a class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <th scope="row">5</th>
+                           <td>Brandon Jacob</td>
+                           <td class="text-center">0</td>
+                           <td class="text-center"><i class="bi bi-x-circle-fill" style="color:crimson"></i></td>
+                           <td class="text-center">
+                              <a class="btn btn-primary btn-sm"><i class="bi bi-pencil"></i></a>&nbsp;
+                              <a class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
+                           </td>
+                        </tr>                                                                                                
+                     </tbody>
+                  </table>
+                </div>
+             </div>
+          </div>
+          <div class="col-lg-5">
+             <div class="card">
+                <div class="card-body">
+                   <h5 class="card-title">Example Card</h5>
+                   <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+                   Items: {{ data.length }}
+                </div>
+             </div>
+          </div>
+       </div>       
+    </section>
+ </main>

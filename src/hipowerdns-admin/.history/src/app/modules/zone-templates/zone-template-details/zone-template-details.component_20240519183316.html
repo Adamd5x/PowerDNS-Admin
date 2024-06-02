@@ -1,0 +1,41 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+       <h1>Zone Template</h1>
+       <nav>
+          <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+             <li class="breadcrumb-item">Settings</li>
+             <li class="breadcrumb-item"><a routerLink="/templates">Zones templates</a></li>
+             <li class="breadcrumb-item" active>Template</li>
+          </ol>
+       </nav>
+    </div>
+    <section class="section">
+      <div class="row">
+         <div class="col-lg-12">
+            <div class="card">
+               <div class="card-body p-2">
+                  <p>
+                     {{ data.id }}<br>
+                     {{ data.name }}<br>
+                     {{ data.active}}<br>
+                     {{ data.description }}<br>
+                     {{ data.records?.length }}
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="row">
+         <div class="col-lg-12">
+            <div class="card">
+               <div class="card-body p-2">
+                  
+               </div>
+            </div>
+         </div>
+      </div>
+    </section>
+</main>

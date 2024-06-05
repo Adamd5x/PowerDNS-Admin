@@ -1,6 +1,8 @@
 # PowerDNS-Admin
 PowerDNS Server Web Administrator in Angular 16 with Microsoft .net 8 back-end.
 
+Project was moved to: [Azure DevOps](https://dev.azure.com/AdamDebowski/PowerDNS-Admin)
+
 # Bakck-end
 Technology stack:
 - C#
